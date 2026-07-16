@@ -32,18 +32,13 @@
       <h1>Do I have an appropriate opening in my schedule to accommodate this request?</h1>
       <div class="choice-row">
         <button type="button" data-next="schedule-now">YES</button>
-        <button type="button" data-next="schedule-later">NO</button>
+        <button type="button" data-next="question-three">NO</button>
       </div>
     </section>
 
     <section class="screen" id="schedule-now" data-screen="schedule-now" hidden>
       <h1>Schedule the client session, phone call, meeting, or other appropriate response.</h1>
-      <button type="button" data-next="question-three">CONTINUE</button>
-    </section>
-
-    <section class="screen" id="schedule-later" data-screen="schedule-later" hidden>
-      <h1>Schedule the request for a future available time.</h1>
-      <button type="button" data-next="question-three">CONTINUE</button>
+      <button type="button" data-action="reset">RESET</button>
     </section>
 
     <section class="screen" id="question-three" data-screen="question-three" hidden>
