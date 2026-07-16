@@ -78,6 +78,22 @@ button {
   display: flex;
 }
 
+.screen--entering {
+  animation: screen-enter 260ms ease-out both;
+}
+
+@keyframes screen-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .screen h1,
 .screen p,
 .screen ul {
@@ -135,6 +151,7 @@ button {
   transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  user-select: none;
 }
 
 .primary-button {
@@ -223,6 +240,18 @@ button {
   margin-top: 9px;
 }
 
+@media (hover: none), (pointer: coarse) {
+  .screen button:hover {
+    filter: none;
+    transform: none;
+    box-shadow: var(--button-shadow);
+  }
+
+  .primary-button:hover {
+    box-shadow: 0 10px 0 var(--blue-dark), 0 19px 34px rgba(0, 0, 0, 0.32);
+  }
+}
+
 @media (max-width: 360px) {
   .app-shell {
     padding-inline: 18px;
@@ -239,6 +268,28 @@ button {
   .screen button {
     min-height: 58px;
     padding-inline: 16px;
+  }
+}
+
+@media (max-width: 520px) and (orientation: landscape) {
+  .app-shell {
+    width: min(100%, 700px);
+    padding-top: max(14px, env(safe-area-inset-top));
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+
+  .screen {
+    min-height: calc(100dvh - 30px);
+    gap: 18px;
+    padding-block: 12px;
+  }
+
+  .screen h1 {
+    font-size: clamp(1.45rem, 5vw, 2rem);
+  }
+
+  .primary-button {
+    min-height: 78px;
   }
 }
 
