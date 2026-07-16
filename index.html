@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#18192d">
+  <title>PAUSE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell" aria-live="polite">
+    <section class="screen screen--active" id="start-screen" data-screen="start">
+      <button class="primary-button" type="button" data-action="start">PAUSE</button>
+    </section>
+
+    <section class="screen" id="question-one" data-screen="question-one" hidden>
+      <p class="question-number">1</p>
+      <h1>Is there a serious or legitimate threat to self or others?</h1>
+      <div class="choice-row">
+        <button type="button" data-next="crisis">YES</button>
+        <button type="button" data-next="question-two">NO</button>
+      </div>
+    </section>
+
+    <section class="screen" id="crisis" data-screen="crisis" hidden>
+      <h1>Initiate the appropriate crisis-management protocol.</h1>
+      <button type="button" data-action="reset">RESET</button>
+    </section>
+
+    <section class="screen" id="question-two" data-screen="question-two" hidden>
+      <p class="question-number">2</p>
+      <h1>Do I have an appropriate opening in my schedule to accommodate this request?</h1>
+      <div class="choice-row">
+        <button type="button" data-next="schedule-now">YES</button>
+        <button type="button" data-next="schedule-later">NO</button>
+      </div>
+    </section>
+
+    <section class="screen" id="schedule-now" data-screen="schedule-now" hidden>
+      <h1>Schedule the client session, phone call, meeting, or other appropriate response.</h1>
+      <button type="button" data-next="question-three">CONTINUE</button>
+    </section>
+
+    <section class="screen" id="schedule-later" data-screen="schedule-later" hidden>
+      <h1>Schedule the request for a future available time.</h1>
+      <button type="button" data-next="question-three">CONTINUE</button>
+    </section>
+
+    <section class="screen" id="question-three" data-screen="question-three" hidden>
+      <p class="question-number">3</p>
+      <h1>Is this a therapist responsibility or a school responsibility?</h1>
+      <div class="choice-row choice-row--stacked">
+        <button type="button" data-next="therapist-responsibility">THERAPIST RESPONSIBILITY</button>
+        <button type="button" data-next="school-responsibility">SCHOOL RESPONSIBILITY</button>
+      </div>
+    </section>
+
+    <section class="screen" id="therapist-responsibility" data-screen="therapist-responsibility" hidden>
+      <h1>THERAPIST RESPONSIBILITY</h1>
+      <p>Follow the scheduling and planning process above.</p>
+      <button type="button" data-next="purpose">REMINDER</button>
+    </section>
+
+    <section class="screen" id="school-responsibility" data-screen="school-responsibility" hidden>
+      <h1>SCHOOL RESPONSIBILITY</h1>
+      <p>Redirect or coordinate the request with the appropriate school staff or school protocol.</p>
+      <button type="button" data-next="purpose">REMINDER</button>
+    </section>
+
+    <section class="screen purpose-screen" id="purpose" data-screen="purpose" hidden>
+      <h1>The Purpose of <strong>PAUSE</strong></h1>
+      <p>PAUSE is not about avoiding work or refusing to help. It is a tool for:</p>
+      <ul>
+        <li>Prioritizing client care</li>
+        <li>Responding appropriately to urgent concerns</li>
+        <li>Managing time intentionally</li>
+        <li>Protecting scheduled clinical responsibilities</li>
+        <li>Distinguishing therapist duties from school duties</li>
+        <li>Setting and maintaining professional boundaries</li>
+      </ul>
+      <p>A request can be important without requiring an immediate response from the therapist.</p>
+      <button type="button" data-action="reset">RESET</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
