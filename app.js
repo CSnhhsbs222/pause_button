@@ -4,7 +4,8 @@
   const screens = Array.from(document.querySelectorAll("[data-screen]"));
   const startButton = document.querySelector('[data-action="start"]');
 
-  const buildThreeRoutes = new Set([
+  const appRoutes = new Set([
+    "start",
     "question-one",
     "crisis",
     "question-two",
@@ -12,11 +13,12 @@
     "schedule-later",
     "question-three",
     "therapist-responsibility",
-    "school-responsibility"
+    "school-responsibility",
+    "purpose"
   ]);
 
   function showScreen(screenName) {
-    if (!buildThreeRoutes.has(screenName)) {
+    if (!appRoutes.has(screenName)) {
       return;
     }
 
@@ -36,11 +38,22 @@
     firstButton?.focus({ preventScroll: true });
   }
 
+  function resetApp() {
+    showScreen("start");
+  }
+
   startButton?.addEventListener("click", () => {
     showScreen("question-one");
   });
 
   document.addEventListener("click", (event) => {
+    const resetButton = event.target.closest('[data-action="reset"]');
+
+    if (resetButton) {
+      resetApp();
+      return;
+    }
+
     const navigationButton = event.target.closest("[data-next]");
 
     if (!navigationButton) {
