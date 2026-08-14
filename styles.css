@@ -2,11 +2,11 @@
   color-scheme: dark;
   font-family: Inter, ui-rounded, "SF Pro Rounded", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-synthesis: none;
-  --navy: #18192d;
-  --navy-deep: #10111f;
-  --blue: #148cff;
-  --blue-light: #36a3ff;
-  --blue-dark: #0769c7;
+  --navy: #183743;
+  --navy-deep: #102a33;
+  --blue: #347f8f;
+  --blue-light: #6ab4aa;
+  --blue-dark: #255b66;
   --white: #ffffff;
   --muted-white: rgba(255, 255, 255, 0.86);
   --button-shadow: 0 8px 0 var(--blue-dark), 0 15px 28px rgba(0, 0, 0, 0.28);
@@ -29,7 +29,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 50% 12%, rgba(56, 75, 132, 0.18), transparent 38%),
+    radial-gradient(circle at 50% 12%, rgba(106, 180, 170, 0.2), transparent 38%),
     linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
   color: var(--white);
   -webkit-font-smoothing: antialiased;
